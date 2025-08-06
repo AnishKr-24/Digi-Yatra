@@ -1,0 +1,51 @@
+// src/pages/NotFoundPage.scss
+
+.not-found-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh; /* इसे आप अपनी आवश्यकतानुसार बदल सकते हैं */
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  color: #34495e;
+  background-color: #f8f9fa;
+  padding: 2rem;
+}
+
+.not-found-title {
+  font-size: 8rem;
+  font-weight: bold;
+  color: #e74c3c;
+  margin: 0;
+  line-height: 1;
+
+  @media (max-width: 768px) {
+    font-size: 6rem;
+  }
+}
+
+.not-found-message {
+  font-size: 1.5rem;
+  margin: 1rem 0 2rem;
+  color: #566573;
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+  }
+}
+
+.home-link {
+  padding: 1rem 2rem;
+  background-color: #3498db;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+  }
+}

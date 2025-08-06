@@ -1,0 +1,81 @@
+.train-service-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  background-color: #f0f4f7;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  font-family: 'Roboto', sans-serif;
+}
+
+.train-service-title {
+  text-align: center;
+  color: #1c2833;
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+}
+
+.train-booking-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.train-booking-form {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.form-group-train {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #566573;
+  }
+
+  input, select {
+    padding: 0.8rem;
+    border: 1px solid #d1d9e6;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+
+    &:focus {
+      outline: none;
+      border-color: #3498db;
+      box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.2);
+    }
+  }
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.search-button-train {
+  grid-column: 1 / -1;
+  padding: 1rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #2980b9;
+  }
+}

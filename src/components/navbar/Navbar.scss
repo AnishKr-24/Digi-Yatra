@@ -1,0 +1,108 @@
+// src/components/navbar/Navbar.scss
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 2rem;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar-logo a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #007bff; // Blue
+  text-decoration: none;
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li {
+  position: relative;
+}
+
+.navbar-links li a,
+.navbar-links li .dropbtn {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.navbar-links li a:hover,
+.navbar-links li .dropbtn:hover {
+  color: #007bff;
+}
+
+/* Dropdown Content */
+
+.dropdown {
+  /* यह ड्रॉपडाउन मेन्यू का कंटेनर है */
+  position: relative;
+  display: inline-block;
+
+  &:hover .dropdown-content {
+    display: block; /* जब ड्रॉपडाउन कंटेनर पर होवर किया जाता है, तो कंटेंट को दिखाएं */
+  }
+}
+
+.dropdown-content {
+  /* यह ड्रॉपडाउन मेन्यू है जो डिफ़ॉल्ट रूप से छिपा हुआ होता है */
+  display: none; 
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 100;
+  border-radius: 5px;
+  left: 0; 
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+      background-color: #e2e2e2;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Buttons */
+.navbar-buttons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: 500;
+  text-decoration: none;
+  color: white;
+}
+
+.login-btn {
+  background-color: #007bff;
+}
+
+.signup-btn {
+  background-color: #28a745;
+}
