@@ -1,4 +1,4 @@
-// src/components/navbar/Navbar.jsx
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.scss';
@@ -44,8 +44,8 @@ const Navbar = () => {
       </ul>
 
       <div className="navbar-buttons">
-        <Link to="/login" className="btn login-btn">Login</Link>
-        <Link to="/signup" className="btn signup-btn">Sign Up</Link>
+        <Link to="/auth" className="btn login-btn">Login</Link>
+        <Link to="/auth" className="btn signup-btn">Sign Up</Link>
       </div>
     </nav>
   );

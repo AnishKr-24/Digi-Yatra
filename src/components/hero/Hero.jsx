@@ -1,4 +1,4 @@
-// src/components/hero/Hero.jsx
+
 
 import React from 'react';
 import './Hero.scss';

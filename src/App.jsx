@@ -4,9 +4,8 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './index.css'
 
-import Navbar from './components/Navbar/Navbar';
+import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer'; 
-
 import HomePage from './pages/HomePage';
 import BusOffersPage from './pages/offers/BusOffersPage';
 import TrainOffersPage from './pages/offers/TrainOffersPage';

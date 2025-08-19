@@ -85,7 +85,7 @@ export const flightOffers = [
     destination: "Delhi to Mumbai",
     price: "₹4,999",
     features: ["Flexible travel dates", "Includes 15kg check-in baggage", "Complimentary meal on board"],
-    airlineLogo: "https://via.placeholder.com/50",
+    airlineLogo: "https://www.shutterstock.com/image-vector/creative-airlines-logo-vector-design-600nw-2582014441.jpg",
   },
   {
     id: 2,
@@ -93,7 +93,7 @@ export const flightOffers = [
     destination: "Delhi to Singapore",
     price: "₹18,999",
     features: ["Upto 40% off on round trip", "Extra baggage allowance", "Free seat selection"],
-    airlineLogo: "https://via.placeholder.com/50",
+    airlineLogo: "https://static.vecteezy.com/system/resources/thumbnails/023/616/612/small_2x/airplane-aviation-logo-design-concept-airline-logo-plane-travel-icon-airport-flight-world-aviation-vector.jpg",
   },
   {
     id: 3,
@@ -101,7 +101,7 @@ export const flightOffers = [
     destination: "Bangalore to Goa",
     price: "₹3,499",
     features: ["Exclusive fares for weekend trips", "Includes free airport lounge access", "Offer valid on select dates"],
-    airlineLogo: "https://via.placeholder.com/50",
+    airlineLogo: "https://static.beebom.com/wp-content/uploads/2018/12/Lufthansa-Logo.jpg",
   },
   {
     id: 4,
@@ -109,7 +109,7 @@ export const flightOffers = [
     destination: "Delhi to Mumbai",
     price: "₹4,999",
     features: ["Flexible travel dates", "Includes 15kg check-in baggage", "Complimentary meal on board"],
-    airlineLogo: "https://via.placeholder.com/50",
+    airlineLogo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiQr_rZjDEwEqjfv9cxso-nx73ENvrHrJbLA&s",
   },
   {
     id: 5,
@@ -117,7 +117,7 @@ export const flightOffers = [
     destination: "Delhi to Singapore",
     price: "₹18,999",
     features: ["Upto 40% off on round trip", "Extra baggage allowance", "Free seat selection"],
-    airlineLogo: "https://via.placeholder.com/50",
+    airlineLogo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSASK_k_FItLCC3f5iTPdYYCMadBhGPgrREBA&s",
   },
   {
     id: 6,
@@ -125,6 +125,6 @@ export const flightOffers = [
     destination: "Bangalore to Goa",
     price: "₹3,499",
     features: ["Exclusive fares for weekend trips", "Includes free airport lounge access", "Offer valid on select dates"],
-    airlineLogo: "https://via.placeholder.com/50",
+    airlineLogo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSgeNPbdIQ25klQ47uoj9g-DrqoRNAgnon1Q&s",
   },
 ];

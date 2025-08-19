@@ -1,84 +1,114 @@
 .flight-offers-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2.5rem;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  background-color: #f0f2f5;
+  padding: 2rem;
+  font-family: 'Arial', sans-serif;
 }
 
 .flight-offers-title {
-  font-size: 3rem;
-  font-weight: 600;
+  font-size: 2.5rem;
+  font-weight: bold;
   text-align: center;
-  color: #1a202c;
-  margin-bottom: 3.5rem;
-  letter-spacing: -1px;
+  color: #333;
+  margin-bottom: 2rem;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #007bff;
+    border-radius: 2px;
+  }
 }
 
 .offers-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  justify-content: center;
 }
 
 .flight-card {
-  background-color: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.6s ease;
   display: flex;
   flex-direction: column;
+  position: relative;
+  cursor: pointer;
 
+  // hover effect
   &:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #e6f0ff, #ffffff);
+
+    // subtle glowing border animation
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 12px;
+      padding: 2px;
+      background: linear-gradient(45deg, #007bff, #00c6ff, #007bff);
+      background-size: 300% 300%;
+      animation: gradientMove 4s ease infinite;
+      -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+              mask-composite: exclude;
+      pointer-events: none;
+    }
   }
 
   .card-header {
-    margin-bottom: 1.5rem;
+    text-align: center;
+    padding: 1rem;
 
     .airline-logo {
-      width: 50px;
+      width: 60px;
       height: auto;
       margin-bottom: 1rem;
     }
 
     h3 {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: #2d3748;
-      margin: 0;
+      font-size: 1.5rem;
+      color: #333;
+      margin-bottom: 0.25rem;
     }
 
     .destination {
       font-size: 1rem;
-      color: #718096;
-      margin: 0.25rem 0 0;
+      color: #666;
     }
   }
 
   .card-body {
-    flex-grow: 1;
+    padding: 0 1.5rem 1rem;
 
     ul {
       list-style: none;
       padding: 0;
-      margin: 0 0 1.5rem 0;
+      margin: 0;
 
       li {
-        display: flex;
-        align-items: center;
-        margin-bottom: 0.75rem;
-        font-size: 1rem;
-        color: #4a5568;
+        font-size: 0.95rem;
+        margin-bottom: 0.5rem;
+        color: #444;
 
         &::before {
-          content: '✓';
-          color: #38a169;
+          content: '✈ ';
+          color: #007bff;
           font-weight: bold;
-          margin-right: 10px;
+          margin-right: 6px;
         }
       }
     }
@@ -88,27 +118,41 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 1px solid #e2e8f0;
-    padding-top: 1.5rem;
+    border-top: 1px solid #eee;
+    padding: 1rem 1.5rem;
 
     .price {
-      font-size: 2rem;
-      font-weight: 700;
+      font-size: 1.4rem;
+      font-weight: bold;
       color: #e53e3e;
     }
 
     .book-button {
-      padding: 0.75rem 1.5rem;
-      background-color: #3182ce;
+      padding: 0.6rem 1.2rem;
+      background-color: #007bff;
       color: #fff;
       text-decoration: none;
-      border-radius: 8px;
+      border-radius: 50px;
       font-weight: bold;
-      transition: background-color 0.3s ease;
+      transition: background-color 0.3s ease, transform 0.3s ease;
 
       &:hover {
-        background-color: #2c5282;
+        background-color: #0056b3;
+        transform: scale(1.05);
       }
     }
+  }
+}
+
+// gradient border animation
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }

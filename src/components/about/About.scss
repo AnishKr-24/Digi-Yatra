@@ -1,72 +1,72 @@
-// src/components/about/About.scss
+// // src/components/about/About.scss
 
-.about-container {
-  max-width: 900px;
-  margin: 2rem auto;
-  padding: 2rem;
-  font-family: 'Poppins', sans-serif;
-  color: #34495e;
-  line-height: 1.6;
-}
+// .about-container {
+//   max-width: 900px;
+//   margin: 2rem auto;
+//   padding: 2rem;
+//   font-family: 'Poppins', sans-serif;
+//   color: #34495e;
+//   line-height: 1.6;
+// }
 
-.about-title {
-  text-align: center;
-  font-size: 2.5rem;
-  color: #2c3e50;
-  margin-bottom: 2rem;
-}
+// .about-title {
+//   text-align: center;
+//   font-size: 2.5rem;
+//   color: #2c3e50;
+//   margin-bottom: 2rem;
+// }
 
-.about-intro {
-  font-size: 1.1rem;
-  text-align: center;
-  margin-bottom: 3rem;
-  border-bottom: 1px solid #e0e0e0;
-  padding-bottom: 2rem;
-}
+// .about-intro {
+//   font-size: 1.1rem;
+//   text-align: center;
+//   margin-bottom: 3rem;
+//   border-bottom: 1px solid #e0e0e0;
+//   padding-bottom: 2rem;
+// }
 
-.about-section {
-  margin-bottom: 3rem;
+// .about-section {
+//   margin-bottom: 3rem;
 
-  h2 {
-    font-size: 2rem;
-    color: #2980b9;
-    border-left: 4px solid #3498db;
-    padding-left: 1rem;
-    margin-bottom: 1.5rem;
-  }
+//   h2 {
+//     font-size: 2rem;
+//     color: #2980b9;
+//     border-left: 4px solid #3498db;
+//     padding-left: 1rem;
+//     margin-bottom: 1.5rem;
+//   }
 
-  p {
-    font-size: 1rem;
-  }
-}
+//   p {
+//     font-size: 1rem;
+//   }
+// }
 
-.team-section {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
+// .team-section {
+//   display: flex;
+//   justify-content: center;
+//   flex-wrap: wrap;
+//   gap: 2rem;
+// }
 
-.team-member {
-  text-align: center;
+// .team-member {
+//   text-align: center;
   
-  img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 1rem;
-    border: 3px solid #3498db;
-  }
+//   img {
+//     width: 150px;
+//     height: 150px;
+//     border-radius: 50%;
+//     object-fit: cover;
+//     margin-bottom: 1rem;
+//     border: 3px solid #3498db;
+//   }
 
-  h3 {
-    font-size: 1.2rem;
-    margin: 0;
-    color: #2c3e50;
-  }
+//   h3 {
+//     font-size: 1.2rem;
+//     margin: 0;
+//     color: #2c3e50;
+//   }
 
-  p {
-    font-size: 0.9rem;
-    color: #7f8c8d;
-  }
-}
+//   p {
+//     font-size: 0.9rem;
+//     color: #7f8c8d;
+//   }
+// }

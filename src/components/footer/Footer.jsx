@@ -1,50 +1,70 @@
-
-import React from 'react';
-import './Footer.scss';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { Container, Card, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const [isHovered, setIsHovered] = useState(false);
+  const [cardHovered, setCardHovered] = useState(false);
+
+  //  Button Style
+  const gradientBtn = {
+    background: isHovered
+      ? "linear-gradient(90deg, #00c6ff, #0072ff)" // hover pe light blue gradient
+      : "linear-gradient(90deg, #004e92, #000428)", // normal gradient
+    border: "none",
+    borderRadius: "8px",
+    padding: "12px 24px",
+    color: "#fff",
+    fontWeight: "600",
+    display: "inline-block",
+    textAlign: "center",
+    transition: "all 0.3s ease",
+    transform: isHovered ? "scale(1.05)" : "scale(1)",
+    boxShadow: isHovered ? "0px 4px 12px rgba(0, 0, 0, 0.3)" : "none",
+  };
+
+  //  Card Style
+  const cardStyle = {
+    borderRadius: "16px",
+    maxWidth: "900px",
+    backgroundColor: cardHovered ? "#f0f8ff" : "#ffffff", // hover pe halka light-blue bg
+    transition: "all 0.3s ease",
+    boxShadow: cardHovered
+      ? "0px 6px 20px rgba(0, 0, 0, 0.2)"
+      : "0px 2px 8px rgba(0, 0, 0, 0.1)",
+    transform: cardHovered ? "scale(1.02)" : "scale(1)",
+  };
+
   return (
-    <footer className="footer">
-      <div className="footer-content">
-        <div className="footer-section about">
-          <Link to="/" className="footer-logo">Digi Yatra</Link>
-          <p>
-            Digi Yatra is your one-stop solution for booking bus, train, and flight tickets with ease and comfort.
+    <section className="py-4 bg-light">
+      <Container>
+        <Card
+          className="shadow-sm border-0 text-center p-5 mx-auto"
+          style={cardStyle}
+          onMouseEnter={() => setCardHovered(true)}
+          onMouseLeave={() => setCardHovered(false)}
+        >
+          {/* Heading */}
+          <h3 className="fw-bold mb-2">Frequently Asked Questions</h3>
+
+          {/* Subtext */}
+          <p className="text-muted mb-4">
+            Find quick answers to common questions about booking, cancellation, and more.
           </p>
-        </div>
-        
-        <div className="footer-section links">
-          <h2>Quick Links</h2>
-          <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About Us</Link></li>
-            <li><Link to="/services/bus">Services</Link></li>
-            <li><Link to="/offers/bus">Offers</Link></li>
-          </ul>
-        </div>
-        
-        <div className="footer-section contact">
-          <h2>Contact Us</h2>
-          <p>Email: contact@digiyatra.com</p>
-          <p>Phone: +91 1234567890</p>
-          <div className="social-links">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-              <i className="fab fa-facebook"></i>
-            </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-              <i className="fab fa-twitter"></i>
-            </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-              <i className="fab fa-instagram"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div className="footer-bottom">
-        &copy; {new Date().getFullYear()} Digi Yatra | All Rights Reserved
-      </div>
-    </footer>
+
+          {/* Button */}
+          <Button
+            as={Link}
+            to="/"
+            style={gradientBtn}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            View FAQ
+          </Button>
+        </Card>
+      </Container>
+    </section>
   );
 };
 

@@ -34,17 +34,39 @@
 }
 
 .offer-card {
-  background-color: #fff;
+  background: #fff;
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.6s ease;
   display: flex;
   flex-direction: column;
+  position: relative;
+  cursor: pointer;
 
+  // hover effect
   &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #e0f7fa, #ffffff);
+
+    // subtle glowing border animation
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 12px;
+      padding: 2px;
+      background: linear-gradient(45deg, #007bff, #00c6ff, #007bff);
+      background-size: 300% 300%;
+      animation: gradientMove 4s ease infinite;
+      -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+              mask-composite: exclude;
+      pointer-events: none;
+    }
   }
 
   .card-image-container {
@@ -57,7 +79,12 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      transition: transform 0.4s ease;
     }
+  }
+
+  &:hover .card-image-container img {
+    transform: scale(1.1);
   }
 
   .card-content {
@@ -88,12 +115,26 @@
       text-decoration: none;
       border-radius: 50px;
       text-align: center;
-      transition: background-color 0.3s ease;
+      transition: background-color 0.3s ease, transform 0.3s ease;
       align-self: flex-start;
 
       &:hover {
         background-color: #0056b3;
+        transform: scale(1.05);
       }
     }
+  }
+}
+
+// gradient border animation
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
