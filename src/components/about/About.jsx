@@ -95,7 +95,7 @@ const About = () => {
         >
           <h2 className="text-center text-primary fw-bold mb-4">Meet Our Team</h2>
           <div className="row row-cols-1 row-cols-md-2 g-4">
-            {["Alex Johnson", "Maria Rodriguez"].map((name, idx) => (
+            {["Abc", "Xyz"].map((name, idx) => (
               <div key={idx} className="col">
                 <motion.div
                   className="card text-center border-0 shadow h-100"
