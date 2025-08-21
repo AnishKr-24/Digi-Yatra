@@ -8,7 +8,7 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
-  z-index: 1000; // Increased z-index to ensure it stays on top
+  z-index: 1000;
 
   .navbar-logo a {
     font-size: 1.5rem;
@@ -37,7 +37,7 @@
         font-weight: 500;
         cursor: pointer;
         transition: color 0.3s;
-        padding: 0.5rem 0; // Added padding for better click area
+        padding: 0.5rem 0;
       }
 
       a:hover,
@@ -45,42 +45,38 @@
         color: #007bff;
       }
     }
+  }
 
-    /* Dropdown Content - Desktop */
-    .dropdown {
-      position: relative;
+  /* Dropdown Content - Desktop */
+  .dropdown {
+    position: relative;
 
-      .dropdown-content {
-        display: none;
-        position: absolute;
-        top: calc(100% + 10px);
-        left: 0;
-        background-color: white;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
-        z-index: 1;
-        border-radius: 5px;
-        border: 1px solid #e0e0e0;
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: calc(100% + 10px);
+      left: 0;
+      background-color: white;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+      z-index: 1;
+      border-radius: 5px;
+      border: 1px solid #e0e0e0;
 
-        a {
-          color: black;
-          padding: 12px 16px;
-          display: block;
-          transition: background-color 0.2s;
-        }
-
-        a:hover {
-          background-color: #f1f1f1;
-        }
+      a {
+        color: black;
+        padding: 12px 16px;
+        display: block;
+        transition: background-color 0.2s;
       }
 
-      &:hover .dropdown-content {
-        display: block;
+      a:hover {
+        background-color: #f1f1f1;
       }
     }
 
-    .navbar-buttons-mobile {
-      display: none; // Hidden on desktop
+    &:hover .dropdown-content {
+      display: block;
     }
   }
 
@@ -113,7 +109,7 @@
 
   /* Hamburger Menu Icon */
   .hamburger {
-    display: none; // Hidden by default on desktop
+    display: none;
     flex-direction: column;
     justify-content: space-around;
     width: 25px;
@@ -140,82 +136,55 @@
       }
     }
   }
-}
 
-/* ----------------------------------- */
-/* Media Query for Mobile and Tablet */
-/* ----------------------------------- */
-@media (max-width: 992px) {
-  .navbar {
-    padding: 0.75rem 1rem; // Reduce padding on smaller screens
-  }
-
-  .navbar-links {
-    position: fixed;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    height: calc(100% - 70px);
-    background-color: white;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 1.5rem;
-    padding: 2rem 0;
-    overflow-y: auto;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-    transform: translateX(-100%); // Hidden by default
-    transition: transform 0.4s ease-in-out;
-
-    &.active {
-      transform: translateX(0); // Slide in when active
-    }
-
-    li {
-      width: 100%;
-      text-align: center;
-    }
-
-    .dropdown {
-      width: 100%;
-      .dropbtn {
-        width: 100%;
-        display: block;
-      }
-
-      .dropdown-content {
-        position: static; // Stacks below the link on mobile
-        width: auto; // Let the content determine width
-        display: none;
-        box-shadow: none;
-        border: none;
-        background-color: #f9f9f9;
-        margin-top: 0.5rem;
-        border-radius: 0;
-        
-        a {
-          padding-left: 3rem; // Indent dropdown items
-        }
-      }
-    }
+  /* New CSS for Left-Aligned Hamburger */
+  @media (max-width: 992px) {
+    /* Change flex direction to move items */
+    flex-direction: row-reverse;
     
-    /* Show dropdown content when parent is hovered/clicked */
-    .dropdown.active > .dropdown-content {
-        display: block;
+    /* Ensure all other items stay on the left */
+    .navbar-links {
+      position: fixed;
+      top: 70px;
+      right: 0; /* Align to the right side of the screen */
+      width: 100%;
+      height: calc(100% - 70px);
+      background-color: white;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start; /* Align menu items to the left */
+      gap: 1.5rem;
+      padding: 2rem 1rem;
+      overflow-y: auto;
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+      transform: translateX(100%); /* Hidden by default, slides from right */
+      transition: transform 0.4s ease-in-out;
+
+      &.active {
+        transform: translateX(0); /* Slide in when active */
+      }
+
+      li {
+        width: 100%;
+        text-align: left;
+      }
+      
+      .dropdown .dropdown-content a {
+        padding-left: 2rem;
+      }
     }
 
-    /* Show mobile buttons and hide desktop ones */
+    .navbar-logo {
+      margin-right: auto; /* Push the logo to the left */
+    }
+
+    .navbar-buttons,
     .navbar-buttons-mobile {
+      display: none;
+    }
+
+    .hamburger {
       display: flex;
     }
-    
-  }
-
-  .navbar-buttons {
-    display: none;
-  }
-
-  .hamburger {
-    display: flex;
   }
 }
