@@ -135,7 +135,7 @@ const About = () => {
               >
                 <div className="d-flex justify-content-around">
                   <div>
-                    <div className="fs-2 fw-bold">2023</div>
+                    <div className="fs-2 fw-bold">2025</div>
                     <div className="small">Founded</div>
                   </div>
                   <div>
@@ -155,7 +155,7 @@ const About = () => {
                 transition={{ duration: 0.3 }}
               >
                 <h2 className="text-primary fw-bold mb-3">Our Journey</h2>
-                <p>Founded in 2023, Digi Yatra started with a simple idea to bring all travel services under one roof. Constantly innovating for better experiences.</p>
+                <p>Founded in 2025, Digi Yatra started with a simple idea to bring all travel services under one roof. Constantly innovating for better experiences.</p>
               </motion.div>
             </div>
           </div>

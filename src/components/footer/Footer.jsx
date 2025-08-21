@@ -1,16 +1,22 @@
 import React, { useState } from "react";
 import { Container, Card, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Footer = () => {
+  const location = useLocation();
   const [isHovered, setIsHovered] = useState(false);
   const [cardHovered, setCardHovered] = useState(false);
 
-  //  Button Style
+  // Show footer only on Home and About pages
+  if (location.pathname !== "/" && location.pathname !== "/about") {
+    return null;
+  }
+
+  // Button Style
   const gradientBtn = {
     background: isHovered
-      ? "linear-gradient(90deg, #00c6ff, #0072ff)" // hover pe light blue gradient
-      : "linear-gradient(90deg, #004e92, #000428)", // normal gradient
+      ? "linear-gradient(90deg, #00c6ff, #0072ff)"
+      : "linear-gradient(90deg, #004e92, #000428)",
     border: "none",
     borderRadius: "8px",
     padding: "12px 24px",
@@ -23,11 +29,11 @@ const Footer = () => {
     boxShadow: isHovered ? "0px 4px 12px rgba(0, 0, 0, 0.3)" : "none",
   };
 
-  //  Card Style
+  // Card Style
   const cardStyle = {
     borderRadius: "16px",
     maxWidth: "900px",
-    backgroundColor: cardHovered ? "#f0f8ff" : "#ffffff", // hover pe halka light-blue bg
+    backgroundColor: cardHovered ? "#f0f8ff" : "#ffffff",
     transition: "all 0.3s ease",
     boxShadow: cardHovered
       ? "0px 6px 20px rgba(0, 0, 0, 0.2)"
@@ -44,15 +50,10 @@ const Footer = () => {
           onMouseEnter={() => setCardHovered(true)}
           onMouseLeave={() => setCardHovered(false)}
         >
-          {/* Heading */}
           <h3 className="fw-bold mb-2">Frequently Asked Questions</h3>
-
-          {/* Subtext */}
           <p className="text-muted mb-4">
             Find quick answers to common questions about booking, cancellation, and more.
           </p>
-
-          {/* Button */}
           <Button
             as={Link}
             to="/"
