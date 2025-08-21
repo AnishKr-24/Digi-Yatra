@@ -1,5 +1,3 @@
-// src/components/navbar/Navbar.scss
-
 .navbar {
   display: flex;
   align-items: center;
@@ -10,99 +8,130 @@
   position: sticky;
   top: 0;
   z-index: 10;
-}
 
-.navbar-logo a {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #007bff; // Blue
-  text-decoration: none;
-}
+  .navbar-logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #007bff;
+    text-decoration: none;
+  }
 
-.navbar-links {
-  display: flex;
-  list-style: none;
-  gap: 1.5rem;
-  margin: 0;
-  padding: 0;
-}
+  .navbar-links {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+    align-items: center;
 
-.navbar-links li {
-  position: relative;
-}
+    li {
+      position: relative;
 
-.navbar-links li a,
-.navbar-links li .dropbtn {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  cursor: pointer;
-}
+      a, .dropbtn {
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+        cursor: pointer;
+        transition: color 0.3s;
+      }
 
-.navbar-links li a:hover,
-.navbar-links li .dropbtn:hover {
-  color: #007bff;
-}
+      a:hover, .dropbtn:hover {
+        color: #007bff;
+      }
+    }
 
-/* Dropdown Content */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 100;
+      border-radius: 5px;
+      left: 0;
 
-.dropdown {
-  /* यह ड्रॉपडाउन मेन्यू का कंटेनर है */
-  position: relative;
-  display: inline-block;
+      a {
+        color: black;
+        padding: 12px 16px;
+        display: block;
+      }
 
-  &:hover .dropdown-content {
-    display: block; /* जब ड्रॉपडाउन कंटेनर पर होवर किया जाता है, तो कंटेंट को दिखाएं */
+      a:hover {
+        background-color: #e2e2e2;
+      }
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .navbar-buttons-mobile {
+      display: none;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+  }
+
+  .navbar-buttons {
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .btn {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: 500;
+    text-decoration: none;
+    color: white;
+  }
+
+  .login-btn { background-color: #007bff; }
+  .signup-btn { background-color: #28a745; }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    span {
+      height: 3px;
+      width: 25px;
+      background: #333;
+      margin: 4px 0;
+      transition: all 0.3s ease;
+    }
   }
 }
 
-.dropdown-content {
-  /* यह ड्रॉपडाउन मेन्यू है जो डिफ़ॉल्ट रूप से छिपा हुआ होता है */
-  display: none; 
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 100;
-  border-radius: 5px;
-  left: 0; 
+/* Responsive */
+@media (max-width: 992px) {
+  .navbar-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background-color: white;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    display: none;
+
+    &.active { display: flex; }
+
+    .dropdown-content { position: static; box-shadow: none; background-color: #f9f9f9; border-radius: 0; }
+  }
+
+  .navbar-buttons { display: none; }
+  .navbar-links .navbar-buttons-mobile { display: flex; }
+
+  .hamburger { display: flex; }
 }
 
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
 }
-
-.dropdown-content a:hover {
-      background-color: #e2e2e2;
-}
-
-/* Show dropdown on hover */
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-/* Buttons */
-.navbar-buttons {
-  display: flex;
-  gap: 0.75rem;
-}
-
-.btn {
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  font-weight: 500;
-  text-decoration: none;
-  color: white;
-}
-
-.login-btn {
-  background-color: #007bff;
-}
-
-.signup-btn {
-  background-color: #28a745;
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
 }
